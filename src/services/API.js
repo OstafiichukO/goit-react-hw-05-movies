@@ -5,7 +5,9 @@ const KEY = "4f78e0fa15d03d6a74908fc8e459b884";
 
 const fetchTrendingMovies = () => {
   return axios
-    .get(`${URL}/trending/all/week?api_key=${KEY}`)
+    .get(
+      `${URL}/trending/all/week?api_key=${KEY}&language=en-US&include_adult=false`
+    )
     .then((response) => response.data.resuts);
 };
 
