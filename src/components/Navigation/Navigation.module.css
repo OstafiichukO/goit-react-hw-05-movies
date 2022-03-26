@@ -1,0 +1,20 @@
+.activeLink {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: bold;
+  color: red;
+  font-size: 24px;
+}
+/* .link:focus {
+  color: red;
+} */
+
+.inactiveLink {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: bold;
+  color: #424242;
+  font-size: 24px;
+}

@@ -1,15 +1,17 @@
 import { StyledApp } from "./App.styled";
-import Api from "./services";
+import Navigation from "./components/Navigation";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./views/HomePage";
+import MoviesPage from "./views/MoviesPage";
 
 function App() {
   return (
     <StyledApp>
-      <div>Hello</div>
-      <input
-        type="Text"
-        plaeholder="type here"
-        onSubmit={Api.fetchSearchMovies}
-      ></input>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="movies" element={<MoviesPage />} />
+      </Routes>
     </StyledApp>
   );
 }
