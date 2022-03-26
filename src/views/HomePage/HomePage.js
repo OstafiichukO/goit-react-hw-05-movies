@@ -1,5 +1,7 @@
+import PageHeading from "../../components/PageHeading";
+
 const HomePage = () => {
-  return <p>HomePage text</p>;
+  return <PageHeading text="Trending today" />;
 };
 
 export default HomePage;

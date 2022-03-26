@@ -1,50 +1,38 @@
-import axios from "axios";
-
 const URL = "https://api.themoviedb.org/3";
 const KEY = "4f78e0fa15d03d6a74908fc8e459b884";
 
-const fetchTrendingMovies = () => {
-  return axios
-    .get(
-      `${URL}/trending/all/week?api_key=${KEY}&language=en-US&include_adult=false`
-    )
-    .then((response) => response.data.resuts);
-};
+async function fetchWithErrorHandling(url = "", config = {}) {
+  const response = await fetch(url, config);
+  return response.ok
+    ? await response.json()
+    : Promise.reject(new Error("Not found"));
+}
 
-const fetchSearchMovies = (searchQuery) => {
-  return axios
-    .get(
-      `${URL}/search/movie?api_key=${KEY}&language=en-US&query=${searchQuery}&page=1&include_adult=false`
-    )
-    .then((response) => response.data.results);
-};
+// searchQuery
+export function fetchSearchMovies(name) {
+  return fetchWithErrorHandling(
+    `${URL}/search/movie?api_key=${KEY}&language=en-US&page=1&include_adult=false`
+  );
+}
 
-const fetchMovie = (id) => {
-  return axios
-    .get(
-      `${URL}/movie/${id}?api_key=${KEY}&append_to_response=images&language=en-US`
-    )
-    .then((response) => response.data);
-};
+export function fetchTrendingMovies() {
+  return fetchWithErrorHandling(`${URL}/trending/movie/day?api_key=${KEY}`);
+}
 
-const fetchCast = (id) => {
-  return axios
-    .get(`${URL}/movie/${id}/credits?api_key=${KEY}&language=en-US`)
-    .then((response) => response.data);
-};
+export function fetchMovieDetails(id) {
+  return fetchWithErrorHandling(
+    `${URL}/movie/${id}?api_key=${KEY}&language=en-US`
+  );
+}
 
-const fetchReviews = (id) => {
-  return axios
-    .get(`${URL}/movie/${id}/reviews?api_key=${KEY}&language=en-US`)
-    .then((response) => response.data);
-};
+export function fetchMovieCredits(id) {
+  return fetchWithErrorHandling(
+    `${URL}/movie/${id}/credits?api_key=${KEY}&language=en-US`
+  );
+}
 
-const Api = {
-  fetchTrendingMovies,
-  fetchSearchMovies,
-  fetchMovie,
-  fetchCast,
-  fetchReviews,
-};
-
-export default Api;
+export function fetchMovieReviews(id) {
+  return fetchWithErrorHandling(
+    `${URL}/movie/${id}/reviews?api_key=${KEY}&language=en-US&page=1`
+  );
+}
