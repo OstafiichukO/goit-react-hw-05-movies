@@ -1,0 +1,16 @@
+.list {
+  list-style: circle;
+  margin-left: 50px;
+}
+.item:not(:last-child) {
+  margin-bottom: 5px;
+}
+.link {
+  color: blue;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: #af5665;
+}

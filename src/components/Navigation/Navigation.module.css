@@ -6,6 +6,10 @@
   color: red;
   font-size: 24px;
 }
+.activeLink:hover {
+  text-decoration: underline;
+  color: #af5665;
+}
 /* .link:focus {
   color: red;
 } */
@@ -17,4 +21,9 @@
   font-weight: bold;
   color: #424242;
   font-size: 24px;
+}
+
+.inactiveLink:hover {
+  text-decoration: underline;
+  color: #af5665;
 }

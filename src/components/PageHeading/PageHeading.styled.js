@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export const Heading = styled.h1`
   padding: 30px 0;
+  margin-left: 27px;
   margin-top: 0;
   border-radius: 8px;
   color: #424242;
