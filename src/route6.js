@@ -1,28 +1,27 @@
-// // This is a React Router v6 app
-// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-
 // function App() {
 //   return (
 //     <BrowserRouter>
 //       <Routes>
 //         <Route path="/" element={<Home />} />
-//         <Route path="users/*" element={<Users />} />
+//         <Route path="profile" element={<Profile />}>
+//           <Route path=":id" element={<MyProfile />} />
+//           <Route path="me" element={<OthersProfile />} />
+//         </Route>
 //       </Routes>
 //     </BrowserRouter>
 //   );
 // }
 
-// function Users() {
+// function Profile() {
 //   return (
 //     <div>
 //       <nav>
 //         <Link to="me">My Profile</Link>
 //       </nav>
-
-//       <Routes>
-//         <Route path=":id" element={<UserProfile />} />
-//         <Route path="me" element={<OwnUserProfile />} />
-//       </Routes>
+//       {/*
+//                Будет напрямую отображать <MyProfile /> или <OthersProfile /> на основе различных параметров маршрутизации, определенных выше
+//         */}
+//       <Outlet />
 //     </div>
 //   );
 // }

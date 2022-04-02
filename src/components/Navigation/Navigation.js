@@ -7,7 +7,7 @@ const Navigation = () => {
     <StyledNav>
       <NavLink
         to="/"
-        exact="true"
+        // exact="true"
         className={({ isActive }) =>
           isActive ? styles.activeLink : styles.inactiveLink
         }
@@ -16,6 +16,7 @@ const Navigation = () => {
       </NavLink>
       <NavLink
         to="/movies"
+        // exact="true"
         className={({ isActive }) =>
           isActive ? styles.activeLink : styles.inactiveLink
         }

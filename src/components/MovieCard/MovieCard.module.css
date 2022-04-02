@@ -14,3 +14,7 @@
   text-decoration: underline;
   color: #af5665;
 }
+.image {
+  width: 300px;
+  height: auto;
+}

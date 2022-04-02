@@ -8,7 +8,7 @@ const HomePage = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     Api.fetchTrendingMovies().then((data) => setMovies(data.results));
-  }, [movies]);
+  }, []);
   // console.log(movies);
   return (
     <>

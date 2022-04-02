@@ -1,2 +1,1 @@
-// информация об обзорах
-// Рендерится на странице < MovieDetailsPage >
+export { default } from "./Reviews";
