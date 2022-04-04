@@ -43,10 +43,15 @@ export const Title = styled.h2`
 export const Text = styled.p`
   font-size: 18px;
   margin-top: 20px;
+  text-align: justify;
 `;
 export const Nav = styled.nav`
   font-size: 18px;
   margin-top: 20px;
   display: flex;
   flex-direction: row;
+`;
+export const BtnHome = styled.button`
+  border-radius: 8px;
+  cursor: pointer;
 `;

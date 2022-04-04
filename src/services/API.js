@@ -12,7 +12,7 @@ async function fetchWithErrorHandling(url = "", config = {}) {
 // searchQuery
 function fetchSearchMovies(name) {
   return fetchWithErrorHandling(
-    `${URL}/search/movie?api_key=${KEY}&language=en-US&page=1&include_adult=false`
+    `${URL}/search/movie?api_key=${KEY}&query=${name}&language=en-US&page=1&include_adult=false`
   );
 }
 
