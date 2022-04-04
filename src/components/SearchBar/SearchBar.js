@@ -1,21 +1,23 @@
 import { useState } from "react";
-import { toast } from "react-toastify";
+import PropTypes from "prop-types";
+import toast from "react-hot-toast";
 import { Div, Input, Button } from "./SearchBar.styled";
 
 const SearchBar = ({ onClick }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleInput = (e) => {
-    setSearchQuery(e.target.value);
+    setSearchQuery(e.currentTarget.value.toLowerCase());
   };
 
   const handleClick = (e) => {
     e.preventDefault();
-    if (searchQuery === "") {
-      toast.error("No results");
+    if (searchQuery.trim() === "") {
+      toast.error("Enter the value of the request!");
       return;
     }
     onClick(searchQuery);
+    setSearchQuery("");
   };
 
   return (
@@ -23,6 +25,7 @@ const SearchBar = ({ onClick }) => {
       <Div>
         <form onSubmit={handleClick}>
           <Input
+            name="searchQuery"
             type="text"
             autoComplete="off"
             value={searchQuery}
@@ -35,3 +38,5 @@ const SearchBar = ({ onClick }) => {
   );
 };
 export default SearchBar;
+
+SearchBar.propTypes = { onSubmit: PropTypes.func.isRequired };

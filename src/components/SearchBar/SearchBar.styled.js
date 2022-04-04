@@ -5,6 +5,7 @@ export const Input = styled.input`
   height: 40px;
   padding: 10px;
   font-size: 16px;
+  border-radius: 8px;
 `;
 
 export const Button = styled.button`
@@ -13,6 +14,11 @@ export const Button = styled.button`
   margin-left: 10px;
   font-size: 18px;
   font-weight: 500;
+  border-radius: 8px;
+  color: red;
+  background-color: #fff;
+  cursor: pointer;
+  font-weight: bold;
 `;
 
 export const Div = styled.div`

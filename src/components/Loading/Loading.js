@@ -1,8 +1,16 @@
-// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-// import { Audio } from "react-loader-spinner";
+import Loader from "react-js-loader";
 
-// const Loading = () => {
-//   return <Audio height="100" width="100" color="grey" ariaLabel="loading" />;
-// };
+const Loading = () => {
+  return (
+    <>
+      <Loader
+        type="bubble-top"
+        bgColor={"red"}
+        title={"bubble-top"}
+        size={100}
+      />
+    </>
+  );
+};
 
-// export default Loading;
+export default Loading;

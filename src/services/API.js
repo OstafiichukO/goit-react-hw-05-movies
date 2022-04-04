@@ -16,8 +16,10 @@ function fetchSearchMovies(name) {
   );
 }
 
-function fetchTrendingMovies() {
-  return fetchWithErrorHandling(`${URL}/trending/movie/day?api_key=${KEY}`);
+function fetchTrendingMovies(currentPage) {
+  return fetchWithErrorHandling(
+    `${URL}/trending/movie/day?api_key=${KEY}&page=${currentPage}`
+  );
 }
 
 function fetchMovieDetails(id) {

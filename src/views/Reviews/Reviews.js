@@ -1,17 +1,19 @@
 // информация об обзорах
 // Рендерится на странице < MovieDetailsPage >
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Api from "../../services";
 import { NoReviews, Text } from "./Reviews.styled";
 
-const Reviews = ({ movieId }) => {
+const Reviews = () => {
   const [reviews, setReviews] = useState([]);
+  const currentMovieId = useParams();
+  const movieId = currentMovieId.movieId;
 
   useEffect(() => {
     Api.fetchMovieReviews(movieId).then((movie) => setReviews(movie.results));
   }, [movieId]);
-  // console.log(reviews);
-  // console.log(movieId);
+
   return (
     <>
       {reviews.length > 0 ? (

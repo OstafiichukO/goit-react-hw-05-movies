@@ -1,7 +1,6 @@
 // страница с детальной информацией о кинофильме
-import { useState, useEffect, Suspense } from "react";
-import { Route, Routes, Link, useParams, useNavigate } from "react-router-dom";
-
+import { useState, useEffect } from "react";
+import { Link, useParams, useNavigate, Outlet } from "react-router-dom";
 import { VscArrowLeft } from "react-icons/vsc";
 import PageHeading from "../../components/PageHeading";
 import {
@@ -18,11 +17,7 @@ import {
 } from "./MovieDetailsPage.styled";
 import s from "./MovieDetailsPage.module.css";
 import { IMAGE_URL } from "../../services/Api";
-
 import Api from "../../services";
-import Cast from "../Cast";
-import Reviews from "../Reviews";
-// import Loading from "../../components/Loading";
 
 const MovieDetailsPage = () => {
   let navigate = useNavigate();
@@ -83,13 +78,7 @@ const MovieDetailsPage = () => {
               </Link>
             </Nav>
           </ContainerAdditional>
-
-          <Suspense>
-            <Routes>
-              <Route path="/cast" element={<Cast movieId={movieId} />} />
-              <Route path="/reviews" element={<Reviews movieId={movieId} />} />
-            </Routes>
-          </Suspense>
+          <Outlet />
         </>
       )}
     </>

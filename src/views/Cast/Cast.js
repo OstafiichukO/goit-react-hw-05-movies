@@ -1,13 +1,16 @@
 // информация о актерском составе.
 // Рендерится на странице < MovieDetailsPage >
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Api from "../../services";
 import { IMAGE_URL } from "../../services/Api";
 import { Ul, Li, Name } from "./Cast.styled";
 import defaultImg from "../../img/no_image_available.svg";
 
-const Cast = ({ movieId }) => {
+const Cast = () => {
   const [cast, setCast] = useState([]);
+  const currentMovieId = useParams();
+  const movieId = currentMovieId.movieId;
 
   useEffect(() => {
     Api.fetchMovieCredits(movieId).then((movie) => setCast(movie.cast));

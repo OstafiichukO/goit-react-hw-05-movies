@@ -4,6 +4,7 @@ export const StyledNav = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
   padding: 25px;
   box-shadow: 0px -7px 16px 4px;
   ${
