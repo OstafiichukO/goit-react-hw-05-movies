@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import s from "./MovieCard.module.css";
 import { IMAGE_URL } from "../../services/Api";
@@ -34,6 +35,14 @@ const MovieCard = ({ movies }) => {
       </ul>
     </div>
   );
+};
+
+MovieCard.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    })
+  ),
 };
 
 export default MovieCard;
