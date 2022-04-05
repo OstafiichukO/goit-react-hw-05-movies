@@ -55,3 +55,12 @@ export const BtnHome = styled.button`
   border-radius: 8px;
   cursor: pointer;
 `;
+export const PageHeading = styled.h2`
+  padding: 30px 0;
+  margin-left: 27px;
+  margin-top: 0;
+  border-radius: 8px;
+  color: #424242;
+  font-size: 32px;
+  font-weight: 500;
+`;

@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate, Outlet } from "react-router-dom";
 import { VscArrowLeft } from "react-icons/vsc";
-import PageHeading from "../../components/PageHeading";
+import { PageHeading } from "./MovieDetailsPage.styled";
 import {
   Button,
   Container,
