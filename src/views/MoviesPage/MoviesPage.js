@@ -1,11 +1,10 @@
+// страница поиска фильмов по ключевому слову
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import SearchBar from "../../components/SearchBar";
 import MovieCard from "../../components/MovieCard";
-
 import Api from "../../services/Api";
 
-// страница поиска фильмов по ключевому слову
 const MoviesPage = () => {
   const [movies, setMovies] = useState(null);
   const [query, setQuery] = useState("");

@@ -9,7 +9,6 @@ async function fetchWithErrorHandling(url = "", config = {}) {
     : Promise.reject(new Error("Not found"));
 }
 
-// searchQuery
 function fetchSearchMovies(name) {
   return fetchWithErrorHandling(
     `${URL}/search/movie?api_key=${KEY}&query=${name}&language=en-US&page=1&include_adult=false`

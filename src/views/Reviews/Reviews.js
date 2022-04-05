@@ -1,5 +1,6 @@
 // информация об обзорах
 // Рендерится на странице < MovieDetailsPage >
+
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Api from "../../services";

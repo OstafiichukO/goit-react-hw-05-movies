@@ -1,3 +1,4 @@
+// домашняя страница со списком популярных кинофильмов
 import { useState, useEffect } from "react";
 import Api from "../../services/";
 import PageHeading from "../../components/PageHeading";
@@ -6,7 +7,6 @@ import { Button, Wrapper } from "./HomePage.styled";
 import { addBackToTop } from "vanilla-back-to-top";
 import Loader from "../../components/Loading";
 
-// домашняя страница со списком популярных кинофильмов
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const [currentPage, setСurrentPage] = useState(1);
