@@ -55,7 +55,7 @@ export const BtnHome = styled.button`
   border-radius: 8px;
   cursor: pointer;
 `;
-export const PageHeading = styled.h2`
+export const PageHeading = styled.div`
   padding: 30px 0;
   margin-left: 27px;
   margin-top: 0;

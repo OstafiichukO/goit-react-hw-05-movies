@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate, Outlet } from "react-router-dom";
 import { VscArrowLeft } from "react-icons/vsc";
-import { PageHeading } from "./MovieDetailsPage.styled";
 import {
   Button,
   Container,
@@ -14,6 +13,7 @@ import {
   ContainerAdditional,
   Nav,
   BtnHome,
+  PageHeading,
 } from "./MovieDetailsPage.styled";
 import s from "./MovieDetailsPage.module.css";
 import { IMAGE_URL } from "../../services/Api";
@@ -38,16 +38,14 @@ const MovieDetailsPage = () => {
     <>
       {movie && (
         <>
-          <PageHeading
-            text={
-              <BtnHome type="button" onClick={onHomePage}>
-                <Button>
-                  <VscArrowLeft />
-                  Go back
-                </Button>
-              </BtnHome>
-            }
-          />
+          <PageHeading>
+            <BtnHome type="button" onClick={onHomePage}>
+              <Button>
+                <VscArrowLeft />
+                Go back
+              </Button>
+            </BtnHome>
+          </PageHeading>
           <Container>
             <Img
               src={IMAGE_URL + movie.poster_path}
