@@ -1,22 +1,27 @@
 import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import s from "./MovieCard.module.css";
 import { IMAGE_URL } from "../../services/Api";
 import defaultImg from "../../img/no_image_available.svg";
 
 const MovieCard = ({ movies }) => {
+  const location = useLocation();
   return (
     <div className={s.div}>
       <ul className={s.list}>
-        {movies.map((movie) => (
-          <li key={movie.id} className={s.item}>
-            <NavLink to={`/movies/${movie.id}`} className={s.link}>
-              {movie.title || movie.name}
-              {movie.poster_path ? (
+        {movies.map(({ id, title, name, poster_path }) => (
+          <li key={id} className={s.item}>
+            <NavLink
+              to={`/movies/${id}`}
+              state={{ from: location }}
+              className={s.link}
+            >
+              {title || name}
+              {poster_path ? (
                 <img
                   className={s.image}
-                  src={IMAGE_URL + movie.poster_path}
-                  alt={movie.title || movie.name}
+                  src={IMAGE_URL + poster_path}
+                  alt={title || name}
                   width="300"
                   height="450"
                 />
@@ -24,7 +29,7 @@ const MovieCard = ({ movies }) => {
                 <img
                   className={s.image}
                   src={defaultImg}
-                  alt={movie.title || movie.name}
+                  alt={title || name}
                   width="300"
                   height="450"
                 />

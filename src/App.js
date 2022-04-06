@@ -24,7 +24,7 @@ function App() {
           }
         />
         <Route
-          path="movies"
+          path="/movies"
           element={
             <Suspense fallback={<Loading />}>
               <MoviesPage />
@@ -32,7 +32,7 @@ function App() {
           }
         />
         <Route
-          path="movies/:movieId/*"
+          path="/movies/:movieId"
           element={
             <Suspense fallback={<Loading />}>
               <MovieDetailsPage />
@@ -56,6 +56,14 @@ function App() {
             }
           />
         </Route>
+        <Route
+          path="*"
+          element={
+            <Suspense fallback={<Loading />}>
+              <HomePage />
+            </Suspense>
+          }
+        />
       </Routes>
       <Toaster
         position="top-center"

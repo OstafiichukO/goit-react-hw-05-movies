@@ -9,12 +9,12 @@ async function fetchWithErrorHandling(url = "", config = {}) {
     : Promise.reject(new Error("Not found"));
 }
 
-function fetchSearchMovies(name) {
+function fetchSearchMovies(name, currentPage) {
   return fetchWithErrorHandling(
-    `${URL}/search/movie?api_key=${KEY}&query=${name}&language=en-US&page=1&include_adult=false`
+    `${URL}/search/movie?api_key=${KEY}&query=${name}&language=en-US&page=${currentPage}&include_adult=false`
   );
 }
-
+// `${BASE_URL}/search/movie?${API_KEY}&language=en-US&query=${value}&page=${currentPage}&include_adult=false`;
 function fetchTrendingMovies(currentPage) {
   return fetchWithErrorHandling(
     `${URL}/trending/movie/day?api_key=${KEY}&page=${currentPage}`

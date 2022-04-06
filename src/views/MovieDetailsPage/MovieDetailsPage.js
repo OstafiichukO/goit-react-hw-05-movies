@@ -1,6 +1,6 @@
 // страница с детальной информацией о кинофильме
 import { useState, useEffect } from "react";
-import { Link, useParams, useNavigate, Outlet } from "react-router-dom";
+import { Link, useParams, Outlet } from "react-router-dom";
 import { VscArrowLeft } from "react-icons/vsc";
 import {
   Button,
@@ -20,7 +20,7 @@ import { IMAGE_URL } from "../../services/Api";
 import Api from "../../services";
 
 const MovieDetailsPage = () => {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
 
@@ -31,7 +31,9 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   const onHomePage = () => {
-    navigate("/");
+    // navigate("/");
+    // eslint-disable-next-line no-restricted-globals
+    history.back();
   };
 
   return (
